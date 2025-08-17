@@ -4,77 +4,70 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sakshi Phadtare — Portfolio</title>
-  <meta name="description" content="Personal portfolio website for Sakshi Phadtare: projects, skills, and contact." />
-  <meta property="og:title" content="Sakshi Phadtare — Portfolio" />
-  <meta property="og:description" content="Projects, skills, experience, and contact." />
-  <meta property="og:type" content="website" />
+  <meta name="description" content="Portfolio website for Sakshi Phadtare: projects, skills, experience, and contact." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg: #0b1220; /* deep navy */
-      --panel: #0f172a; /* slate-900 */
-      --muted: #94a3b8; /* slate-400 */
-      --text: #e2e8f0; /* slate-200 */
-      --brand: #7c3aed; /* violet-600 */
-      --brand-2: #22d3ee; /* cyan-400 */
-      --card: #111827; /* gray-900 */
+      --bg: #0b1220;
+      --panel: #0f172a;
+      --muted: #94a3b8;
+      --text: #e2e8f0;
+      --brand: #7c3aed;
+      --brand-2: #22d3ee;
+      --card: #111827;
       --ring: rgba(124, 58, 237, 0.35);
       --radius: 18px;
       --shadow: 0 10px 30px rgba(0,0,0,.35);
       --maxw: 1100px;
     }
-    *{box-sizing:border-box}
-    html,body{margin:0; padding:0; background:var(--bg); color:var(--text); font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, 'Helvetica Neue', Arial, 'Apple Color Emoji','Segoe UI Emoji';}
-    a{color:inherit; text-decoration:none}
-    img{max-width:100%; display:block}
-    .container{max-width:var(--maxw); margin-inline:auto; padding: 0 1rem}
-    .nav{
-      position:sticky; top:0; z-index:50; backdrop-filter: blur(8px);
-      background: linear-gradient(180deg, rgba(11,18,32,.85), rgba(11,18,32,.55));
-      border-bottom:1px solid rgba(255,255,255,.08);
-    }
-    .nav-inner{display:flex; align-items:center; justify-content:space-between; gap:1rem; padding: .9rem 0}
-    .brand{display:flex; align-items:center; gap:.6rem; font-weight:700}
-    .brand .dot{width:.65rem; height:.65rem; border-radius:999px; background:linear-gradient(45deg,var(--brand),var(--brand-2)); box-shadow:0 0 18px var(--ring)}
-    .menu{display:flex; gap:1rem}
-    .menu a{opacity:.85; padding:.4rem .7rem; border-radius:10px}
-    .menu a:hover{opacity:1; background:rgba(255,255,255,.06)}
-    .mobile-toggle{display:none}
+    *{box-sizing:border-box;}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;}
+    a{color:inherit;text-decoration:none;}
+    img{max-width:100%;display:block;}
+    .container{max-width:var(--maxw);margin-inline:auto;padding:0 1rem;}
+    nav{position:sticky;top:0;z-index:50;backdrop-filter: blur(8px);background: linear-gradient(180deg, rgba(11,18,32,.85), rgba(11,18,32,.55));border-bottom:1px solid rgba(255,255,255,.08);}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.9rem 0;}
+    .brand{display:flex;align-items:center;gap:.6rem;font-weight:700;}
+    .brand .dot{width:.65rem;height:.65rem;border-radius:999px;background:linear-gradient(45deg,var(--brand),var(--brand-2));box-shadow:0 0 18px var(--ring);}
+    .menu{display:flex;gap:1rem;}
+    .menu a{opacity:.85;padding:.4rem .7rem;border-radius:10px;}
+    .menu a:hover{opacity:1;background:rgba(255,255,255,.06);}
+    .mobile-toggle{display:none;}
 
-    .hero{position:relative; overflow:hidden; background: radial-gradient(1200px 600px at 10% -10%, rgba(124,58,237,.35), transparent 60%), radial-gradient(900px 500px at 110% 10%, rgba(34,211,238,.25), transparent 60%)}
-    .hero .inner{display:grid; grid-template-columns: 1.15fr .85fr; align-items:center; gap:2rem; padding: 3.5rem 0}
-    .eyebrow{display:inline-block; font-size:.85rem; color:var(--muted); letter-spacing:.08em}
-    h1{font-size: clamp(2rem, 4vw, 3rem); line-height:1.15; margin:.4rem 0 1rem}
-    .lead{color:#cbd5e1; font-size: clamp(1rem, 1.4vw, 1.15rem)}
-    .cta{display:flex; gap:.8rem; margin-top:1.4rem}
-    .btn{display:inline-flex; align-items:center; gap:.5rem; padding:.7rem 1rem; border-radius:14px; border:1px solid rgba(255,255,255,.1); background:rgba(255,255,255,.04); box-shadow: var(--shadow)}
-    .btn.primary{background:linear-gradient(45deg,var(--brand),var(--brand-2)); color:#0b1220; font-weight:700; border:none}
-    .btn:hover{transform: translateY(-1px)}
+    .hero{position:relative;overflow:hidden;background: radial-gradient(1200px 600px at 10% -10%, rgba(124,58,237,.35), transparent 60%), radial-gradient(900px 500px at 110% 10%, rgba(34,211,238,.25), transparent 60%);}
+    .hero .inner{display:grid;grid-template-columns: 1.15fr .85fr;align-items:center;gap:2rem;padding:3.5rem 0;}
+    h1{font-size: clamp(2rem, 4vw, 3rem);line-height:1.15;margin:.4rem 0 1rem;}
+    .lead{color:#cbd5e1;font-size: clamp(1rem, 1.4vw, 1.15rem);}
+    .cta{display:flex;gap:.8rem;margin-top:1.4rem;}
+    .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.7rem 1rem;border-radius:14px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);box-shadow: var(--shadow);}
+    .btn.primary{background:linear-gradient(45deg,var(--brand),var(--brand-2)); color:#0b1220; font-weight:700;border:none;}
+    .btn:hover{transform: translateY(-1px);transition:0.2s;}
 
-    section{padding: 3.2rem 0; border-top:1px solid rgba(255,255,255,.07)}
-    .section-title{font-size: clamp(1.2rem, 2vw, 1.6rem); margin:0 0 1.2rem}
-    .muted{color:var(--muted)}
+    section{padding: 3.2rem 0; border-top:1px solid rgba(255,255,255,.07);}
+    .section-title{font-size: clamp(1.2rem, 2vw, 1.6rem); margin:0 0 1.2rem;}
+    .muted{color:var(--muted);}
 
-    .stack{display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: .75rem}
-    .chip{background:var(--card); border:1px solid rgba(255,255,255,.08); padding:.75rem .9rem; border-radius:14px; display:flex; align-items:center; justify-content:flex-start; gap:.5rem}
-    .chip small{opacity:.9}
+    .stack{display:grid;grid-template-columns: repeat(auto-fit, minmax(220px,1fr));gap: .75rem;}
+    .chip{background:var(--card);border:1px solid rgba(255,255,255,.08);padding:.75rem .9rem;border-radius:14px;display:flex;align-items:center;justify-content:flex-start;gap:.5rem;}
+    .chip small{opacity:.9;}
 
-    .grid{display:grid; grid-template-columns: repeat(auto-fit,minmax(260px,1fr)); gap:1rem}
-    .card{background:var(--card); border:1px solid rgba(255,255,255,.08); border-radius:var(--radius); padding:1rem; box-shadow:var(--shadow)}
-    .card h3{margin:.3rem 0 .4rem; font-size:1.05rem}
-    .card p{color:#cbd5e1; font-size:.95rem}
-    .badges{display:flex; flex-wrap:wrap; gap:.4rem; margin-top:.6rem}
-    .badge{font-size:.75rem; padding:.25rem .5rem; border-radius:999px; border:1px solid rgba(255,255,255,.1); background:rgba(255,255,255,.04)}
+    .grid{display:grid;grid-template-columns: repeat(auto-fit,minmax(260px,1fr));gap:1rem;}
+    .card{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:1rem;box-shadow:var(--shadow);transition:transform .3s;}
+    .card:hover{transform: translateY(-4px);}
+    .card h3{margin:.3rem 0 .4rem;font-size:1.05rem;}
+    .card p{color:#cbd5e1;font-size:.95rem;}
+    .badges{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.6rem;}
+    .badge{font-size:.75rem;padding:.25rem .5rem;border-radius:999px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);}
 
-    .contact{display:grid; gap:.6rem}
-    .input{width:100%; padding:.8rem 1rem; border-radius:12px; border:1px solid rgba(255,255,255,.12); background:#0b1220; color:var(--text)}
-
-    footer{padding:2rem 0; color:var(--muted); text-align:center}
+    .contact{display:grid;gap:.6rem;}
+    .input{width:100%;padding:.8rem 1rem;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:#0b1220;color:var(--text);}
+    footer{padding:2rem 0;color:var(--muted);text-align:center;}
 
     @media (max-width: 880px){
-      .hero .inner{grid-template-columns: 1fr}
-      .menu{display:none}
-      .mobile-toggle{display:inline-flex; align-items:center; gap:.5rem; padding:.5rem .7rem; border-radius:10px; border:1px solid rgba(255,255,255,.12); background:rgba(255,255,255,.05)}
-      .menu.open{display:flex; flex-direction:column; background:rgba(15,23,42,.96); position:absolute; left:0; right:0; top:60px; padding:1rem; border-bottom:1px solid rgba(255,255,255,.08)}
+      .hero .inner{grid-template-columns:1fr;}
+      .menu{display:none;}
+      .mobile-toggle{display:inline-flex;align-items:center;gap:.5rem;padding:.5rem .7rem;border-radius:10px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.05);}
+      .menu.open{display:flex;flex-direction:column;background:rgba(15,23,42,.96);position:absolute;left:0;right:0;top:60px;padding:1rem;border-bottom:1px solid rgba(255,255,255,.08);}
     }
   </style>
 </head>
@@ -99,11 +92,12 @@
   <header id="top" class="hero">
     <div class="container inner">
       <div>
-        <span class="eyebrow">Cybersecurity Enthusiast</span>
         <h1>Hey, I'm <span style="background:linear-gradient(45deg,var(--brand),var(--brand-2)); -webkit-background-clip:text; background-clip:text; color:transparent;">Sakshi Phadtare</span></h1>
-        <p class="lead">🚀 Cybersecurity Enthusiast | 📚 Security+ in progress <br>
-        🔍 Exploring Splunk & Wireshark | 🛡 Blue Team Learner <br>
-        💻 Building skills one lab at a time | 🌍 Student in Ireland</p>
+        <p class="lead">
+          🚀 Cybersecurity Enthusiast | 📚 Security+ in progress<br>
+          🔍 Exploring Splunk & Wireshark | 🛡 Blue Team Learner<br>
+          💻 Building skills one lab at a time | 🌍 Living in Ireland
+        </p>
         <div class="cta">
           <a class="btn primary" href="#projects">View Projects</a>
           <a class="btn" href="https://www.linkedin.com/in/sakshi-s-phadtare" target="_blank" rel="noopener">LinkedIn</a>
@@ -112,9 +106,9 @@
       <div class="card">
         <h3 style="margin-top:0">Quick Highlights</h3>
         <ul class="muted" style="margin:.5rem 0 0 1rem; line-height:1.6">
-          <li>Blue Team focus · SOC labs</li>
-          <li>Security+ in progress</li>
-          <li>Open to internships and junior roles</li>
+          <li>💻 Hands-on Labs & TryHackMe</li>
+          <li>📚 Microsoft SC-200 in progress</li>
+          <li>Open to Internship and Junior Entry-level jobs</li>
         </ul>
       </div>
     </div>
@@ -124,9 +118,9 @@
   <section id="about">
     <div class="container">
       <h2 class="section-title">About Me</h2>
-      <p class="muted">🚀 Cybersecurity Enthusiast | 📚 Security+ in progress <br>
-        🔍 Exploring Splunk & Wireshark | 🛡 Blue Team Learner <br>
-        💻 Building skills one lab at a time | 🌍 Student in Ireland</p>
+      <p class="muted">
+        Hi, I’m Sakshi Phadtare 👋, a cybersecurity graduate with a passion for hands-on learning. I’ve completed Blue Team Labs Level 1 (BTL1) and CompTIA Security+, and I enjoy exploring tools like Splunk and Wireshark. I love turning curiosity into practical skills and tackling real-world security challenges, always learning, experimenting, and growing in the cybersecurity world.
+      </p>
     </div>
   </section>
 
@@ -160,48 +154,18 @@
     <div class="container">
       <h2 class="section-title">Projects</h2>
       <div class="grid">
-        
-        <article class="card">
+        <div class="card">
           <h3>Red Team vs Blue Team Simulation</h3>
           <p>End-to-end exercise modeling attacker vs defender workflows with detections, logs, and reporting.</p>
-          <div class="badges">
-            <span class="badge">Blue Team</span>
-            <span class="badge">Lab</span>
-            <span class="badge">Security</span>
-          </div>
-          <p style="margin-top:.7rem">
-            <a class="btn" href="#" target="_blank" rel="noopener">Live Demo</a>
-            <a class="btn" href="#" target="_blank" rel="noopener">Source Code</a>
-          </p>
-        </article>
-        
-        <article class="card">
+        </div>
+        <div class="card">
           <h3>Build Your Own SOC Home Lab</h3>
           <p>Hands-on SOC environment with SIEM, endpoint logs, and incident workflows.</p>
-          <div class="badges">
-            <span class="badge">Blue Team</span>
-            <span class="badge">Lab</span>
-            <span class="badge">Security</span>
-          </div>
-          <p style="margin-top:.7rem">
-            <a class="btn" href="#" target="_blank" rel="noopener">Live Demo</a>
-            <a class="btn" href="#" target="_blank" rel="noopener">Source Code</a>
-          </p>
-        </article>
-        
-        <article class="card">
+        </div>
+        <div class="card">
           <h3>Build Your Own Phishing Attack Simulator</h3>
           <p>Custom phishing simulator for awareness and detection tuning in a lab setting.</p>
-          <div class="badges">
-            <span class="badge">Blue Team</span>
-            <span class="badge">Lab</span>
-            <span class="badge">Security</span>
-          </div>
-          <p style="margin-top:.7rem">
-            <a class="btn" href="#" target="_blank" rel="noopener">Live Demo</a>
-            <a class="btn" href="#" target="_blank" rel="noopener">Source Code</a>
-          </p>
-        </article>
+        </div>
       </div>
     </div>
   </section>
@@ -211,59 +175,41 @@
     <div class="container">
       <h2 class="section-title">Certifications</h2>
       <div class="grid">
-        
-        <div class="card">
-          <h3>Security Blue Team Level 1 (BTL1)</h3>
-          <p class="muted">Certificate</p>
-        </div>
-        
-        <div class="card">
-          <h3>CompTIA Security+</h3>
-          <p class="muted">Certificate</p>
-        </div>
-        
-        <div class="card">
-          <h3>Introduction to Splunk</h3>
-          <p class="muted">Certificate</p>
-        </div>
-        
-        <div class="card">
-          <h3>Cybersecurity Essentials</h3>
-          <p class="muted">Certificate</p>
-        </div>
+        <div class="card"><h3>💠 Security Blue Team Level 1 (BTL1)</h3><p class="muted">Certificate</p></div>
+        <div class="card"><h3>🎓 CompTIA Security+</h3><p class="muted">Certificate</p></div>
+        <div class="card"><h3>🖥 Introduction to Splunk</h3><p class="muted">Certificate</p></div>
+        <div class="card"><h3>🔐 Cybersecurity Essentials</h3><p class="muted">Certificate</p></div>
       </div>
     </div>
   </section>
 
-  
-<!-- EXPERIENCE -->
-<section id="experience">
-  <div class="container">
-    <h2 class="section-title">Experience</h2>
-    <div class="card">
-      <h3>Cybersecurity Intern — ECS Software Technologies</h3>
-      <p class="muted">Jan 2023 – Jul 2023</p>
-      <ul style="margin-left:1rem; line-height:1.6">
-        <li>Provided first-level technical support and incident triage, ensuring SLA targets were consistently met.</li>
-        <li>Utilized SIEM tools to investigate and document security alerts, adhering to established runbooks.</li>
-        <li>Monitored logs across 50+ endpoints, detecting and investigating 20+ anomalous activities per month.</li>
-        <li>Gained hands-on experience in a simulated SOC environment, enhancing cybersecurity skills.</li>
-      </ul>
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="container">
+      <h2 class="section-title">Experience</h2>
+      <div class="card">
+        <h3>Cybersecurity Intern — ECS Software Technologies</h3>
+        <p class="muted">Jan 2023 – Jul 2023</p>
+        <ul style="margin-left:1rem;line-height:1.6">
+          <li>Provided first-level technical support and incident triage, ensuring SLA targets were consistently met.</li>
+          <li>Utilized SIEM tools to investigate and document security alerts, adhering to established runbooks.</li>
+          <li>Monitored logs across 50+ endpoints, detecting and investigating 20+ anomalous activities per month.</li>
+          <li>Gained hands-on experience in a simulated SOC environment, enhancing cybersecurity skills.</li>
+        </ul>
+      </div>
     </div>
-  </div>
-</section>
-
+  </section>
 
   <!-- CONTACT -->
   <section id="contact">
     <div class="container">
       <h2 class="section-title">Contact</h2>
       <div class="card" style="margin-bottom:1rem">
-        <p class="muted" style="margin:.2rem 0">Quick Contacts</p>
+        <p class="muted">Quick Contacts</p>
         <p style="line-height:1.9">
           📞 <a href="tel:+353892023429">+353 892023429</a><br>
           ✉️ <a href="mailto:sakshiphadtare2596@gmail.com">sakshiphadtare2596@gmail.com</a><br>
-          🔗 <a href="https://www.linkedin.com/in/sakshi-s-phadtare" target="_blank" rel="noopener">https://www.linkedin.com/in/sakshi-s-phadtare</a>
+          🔗 <a href="https://www.linkedin.com/in/sakshi-s-phadtare" target="_blank" rel="noopener">LinkedIn</a>
         </p>
       </div>
       <form class="contact" action="https://formspree.io/f/your-form-id" method="POST">
@@ -287,11 +233,10 @@
       document.querySelector('.mobile-toggle').setAttribute('aria-expanded', isOpen);
     };
     document.getElementById('year').textContent = new Date().getFullYear();
-    // Smooth scroll for internal anchors
+    // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(a=>{
       a.addEventListener('click', e=>{
-        const id = a.getAttribute('href').slice(1);
-        const el = document.getElementById(id);
+        const el=document.querySelector(a.getAttribute('href'));
         if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); }
       })
     })
