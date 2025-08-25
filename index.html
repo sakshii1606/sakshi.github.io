@@ -1,233 +1,753 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sakshi Phadtare — Portfolio</title>
-  <meta name="description" content="Portfolio website for Sakshi Phadtare: projects, skills, experience, and contact." />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg: #0b1220;
-      --panel: #0f172a;
-      --muted: #94a3b8;
-      --text: #e2e8f0;
-      --brand: #7c3aed;
-      --brand-2: #22d3ee;
-      --card: #111827;
-      --ring: rgba(124, 58, 237, 0.35);
-      --radius: 18px;
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
-      --maxw: 1100px;
-    }
-    *{box-sizing:border-box;}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;}
-    a{color:inherit;text-decoration:none;}
-    img{max-width:100%;display:block;}
-    .container{max-width:var(--maxw);margin-inline:auto;padding:0 1rem;}
-    nav{position:sticky;top:0;z-index:50;backdrop-filter: blur(8px);background: linear-gradient(180deg, rgba(11,18,32,.85), rgba(11,18,32,.55));border-bottom:1px solid rgba(255,255,255,.08);}
-    .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.9rem 0;}
-    .brand{display:flex;align-items:center;gap:.6rem;font-weight:700;}
-    .brand .dot{width:.65rem;height:.65rem;border-radius:999px;background:linear-gradient(45deg,var(--brand),var(--brand-2));box-shadow:0 0 18px var(--ring);}
-    .menu{display:flex;gap:1rem;}
-    .menu a{opacity:.85;padding:.4rem .7rem;border-radius:10px;}
-    .menu a:hover{opacity:1;background:rgba(255,255,255,.06);}
-    .mobile-toggle{display:none;}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sakshi Phadtare | Cybersecurity Professional | Masters Graduate | Ireland</title>
+    <meta name="description" content="Sakshi Phadtare - Cybersecurity Masters Graduate with hands-on experience. BTL1 & Security+ certified. Seeking cybersecurity analyst roles in Ireland.">
+    <meta name="keywords" content="cybersecurity analyst, security analyst, incident response, SIEM, Splunk, security+, BTL1, masters cybersecurity, Ireland, Dublin, threat detection, malware analysis">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    .hero{position:relative;overflow:hidden;background: radial-gradient(1200px 600px at 10% -10%, rgba(124,58,237,.35), transparent 60%), radial-gradient(900px 500px at 110% 10%, rgba(34,211,238,.25), transparent 60%);}
-    .hero .inner{display:grid;grid-template-columns: 1.15fr .85fr;align-items:center;gap:2rem;padding:3.5rem 0;}
-    h1{font-size: clamp(2rem, 4vw, 3rem);line-height:1.15;margin:.4rem 0 1rem;}
-    .lead{color:#cbd5e1;font-size: clamp(1rem, 1.4vw, 1.15rem);}
-    .cta{display:flex;gap:.8rem;margin-top:1.4rem;}
-    .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.7rem 1rem;border-radius:14px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);box-shadow: var(--shadow);}
-    .btn.primary{background:linear-gradient(45deg,var(--brand),var(--brand-2)); color:#0b1220; font-weight:700;border:none;}
-    .btn:hover{transform: translateY(-1px);transition:0.2s;}
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #0f172a;
+            overflow-x: hidden;
+        }
 
-    section{padding: 3.2rem 0; border-top:1px solid rgba(255,255,255,.07);}
-    .section-title{font-size: clamp(1.2rem, 2vw, 1.6rem); margin:0 0 1.2rem;}
-    .muted{color:var(--muted);}
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-    .stack{display:grid;grid-template-columns: repeat(auto-fit, minmax(220px,1fr));gap: .75rem;}
-    .chip{background:var(--card);border:1px solid rgba(255,255,255,.08);padding:.75rem .9rem;border-radius:14px;display:flex;align-items:center;justify-content:flex-start;gap:.5rem;}
-    .chip small{opacity:.9;}
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            position: relative;
+        }
 
-    .grid{display:grid;grid-template-columns: repeat(auto-fit,minmax(260px,1fr));gap:1rem;}
-    .card{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:1rem;box-shadow:var(--shadow);transition:transform .3s;}
-    .card:hover{transform: translateY(-4px);}
-    .card h3{margin:.3rem 0 .4rem;font-size:1.05rem;}
-    .card p{color:#cbd5e1;font-size:.95rem;}
-    .badges{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.6rem;}
-    .badge{font-size:.75rem;padding:.25rem .5rem;border-radius:999px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);}
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="80" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
+            animation: float 20s ease-in-out infinite;
+        }
 
-    .contact{display:grid;gap:.6rem;}
-    .input{width:100%;padding:.8rem 1rem;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:#0b1220;color:var(--text);}
-    footer{padding:2rem 0;color:var(--muted);text-align:center;}
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
 
-    @media (max-width: 880px){
-      .hero .inner{grid-template-columns:1fr;}
-      .menu{display:none;}
-      .mobile-toggle{display:inline-flex;align-items:center;gap:.5rem;padding:.5rem .7rem;border-radius:10px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.05);}
-      .menu.open{display:flex;flex-direction:column;background:rgba(15,23,42,.96);position:absolute;left:0;right:0;top:60px;padding:1rem;border-bottom:1px solid rgba(255,255,255,.08);}
-    }
-  </style>
+        .hero-content {
+            z-index: 2;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #60a5fa 0%, #34d399 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: #94a3b8;
+            font-weight: 400;
+        }
+
+        .hero .description {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            color: #cbd5e1;
+            line-height: 1.8;
+        }
+
+        /* Skills Section */
+        .skills-section {
+            padding: 5rem 0;
+            background-color: #1e293b;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .skill-item {
+            background: #334155;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid #475569;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-10px);
+            background: #3b4c66;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .skill-item i {
+            font-size: 3rem;
+            color: #60a5fa;
+            margin-bottom: 1rem;
+        }
+
+        .skill-item h3 {
+            color: white;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-item p {
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        /* Experience Section */
+        .experience-section {
+            padding: 5rem 0;
+            background-color: #0f172a;
+            color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: white;
+        }
+
+        .experience-item {
+            background: #1e293b;
+            padding: 2.5rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            border-left: 4px solid #60a5fa;
+            transition: all 0.3s ease;
+        }
+
+        .experience-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .experience-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #60a5fa;
+        }
+
+        .experience-date {
+            background: #60a5fa;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .experience-description {
+            color: #cbd5e1;
+            margin-bottom: 1.5rem;
+        }
+
+        .experience-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background: #334155;
+            color: #60a5fa;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            border: 1px solid #60a5fa;
+        }
+
+        /* Projects Section */
+        .projects-section {
+            padding: 5rem 0;
+            background-color: #1e293b;
+            color: white;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .project-card {
+            background: #334155;
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid #475569;
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            border-color: #60a5fa;
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #60a5fa;
+            margin-bottom: 1rem;
+        }
+
+        .project-description {
+            color: #cbd5e1;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        /* Certifications Section */
+        .certifications-section {
+            padding: 5rem 0;
+            background-color: #0f172a;
+            color: white;
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .cert-card {
+            background: linear-gradient(135deg, #34d399 0%, #10b981 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .cert-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 35px rgba(52, 211, 153, 0.3);
+        }
+
+        .cert-card i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .cert-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+
+        .cert-card p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: #60a5fa;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .contact-link:hover {
+            background: #3b82f6;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(96, 165, 250, 0.3);
+        }
+
+        .stats-section {
+            padding: 3rem 0;
+            background-color: #334155;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-item {
+            color: white;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #60a5fa;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: #94a3b8;
+            margin-top: 0.5rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .hero .description {
+                font-size: 1rem;
+            }
+
+            .experience-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+
+            .contact-links {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animation for scroll reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.6s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
 <body>
-  <!-- NAVBAR -->
-  <nav class="nav">
-    <div class="container nav-inner">
-      <a href="#top" class="brand"><span class="dot"></span><span>Sakshi Phadtare</span></a>
-      <button class="mobile-toggle" aria-expanded="false" aria-controls="primary-menu" onclick="toggleMenu()">☰ Menu</button>
-      <div id="primary-menu" class="menu" role="navigation">
-        <a href="#about">About</a>
-        <a href="#stack">Tech Stack</a>
-        <a href="#projects">Projects</a>
-        <a href="#certs">Certifications</a>
-        <a href="#experience">Experience</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </div>
-  </nav>
-
-  <!-- HERO -->
-  <header id="top" class="hero">
-    <div class="container inner">
-      <div>
-        <h1>Hey, I'm <span style="background:linear-gradient(45deg,var(--brand),var(--brand-2)); -webkit-background-clip:text; background-clip:text; color:transparent;">Sakshi Phadtare</span></h1>
-        <p class="lead">
-          🚀 Cybersecurity Enthusiast | 💠 BTL1 Certified<br>
-          🔍 Exploring Splunk & Wireshark | 🛡 Blue Team Learner<br>
-          💻 Building skills one lab at a time | 🌍 Living in Ireland
-        </p>
-        <div class="cta">
-          <a class="btn primary" href="#projects">View Projects</a>
-          <a class="btn" href="https://www.linkedin.com/in/sakshi-s-phadtare" target="_blank" rel="noopener">LinkedIn</a>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Hey, I'm Sakshi Phadtare 👋</h1>
+                <div class="subtitle">Cybersecurity Professional | Blue Team Specialist | Problem Solver 🛡️</div>
+                <div class="description">
+                    I'm a passionate cybersecurity graduate who loves protecting digital assets, analyzing threats, and building secure solutions. Always learning, always defending! 🚀
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="card">
-        <h3 style="margin-top:0">Quick Highlights</h3>
-        <ul class="muted" style="margin:.5rem 0 0 1rem; line-height:1.6">
-          <li>💻 Hands-on Labs & TryHackMe</li>
-          <li>📚 Microsoft SC-200 in progress</li>
-          <li>Open to Internship and Junior Entry-level jobs</li>
-        </ul>
-      </div>
-    </div>
-  </header>
+    </section>
 
-  <!-- ABOUT -->
-  <section id="about">
-    <div class="container">
-      <h2 class="section-title">About Me</h2>
-      <p class="muted">
-        Hi, I’m Sakshi Phadtare 👋, a cybersecurity graduate with a passion for hands-on learning. I’ve completed Blue Team Labs Level 1 (BTL1) and CompTIA Security+, and I enjoy exploring tools like Splunk and Wireshark. I love turning curiosity into practical skills and tackling real-world security challenges, always learning, experimenting, and growing in the cybersecurity world.
-      </p>
-    </div>
-  </section>
-
-  <!-- STACK -->
-  <section id="stack">
-    <div class="container">
-      <h2 class="section-title">Tech Stack</h2>
-      <div class="stack">
-        <div class="chip"><small>🛡 SIEM Technologies (Splunk, QRadar)</small></div>
-        <div class="chip"><small>📊 Log Analysis & Correlation</small></div>
-        <div class="chip"><small>🦠 Malware Analysis & Antivirus Tools</small></div>
-        <div class="chip"><small>🕵 Threat Detection & MITRE ATT&CK Mapping</small></div>
-        <div class="chip"><small>🖥 Forensic Analysis (FTK, Autopsy)</small></div>
-        <div class="chip"><small>🔒 Firewall, IDS/IPS Configuration</small></div>
-        <div class="chip"><small>🌐 Network Traffic & Packet Analysis (Wireshark)</small></div>
-        <div class="chip"><small>🔗 Networking Protocols (TCP/IP, DNS, DHCP, FTP, SSL, RDP)</small></div>
-        <div class="chip"><small>🖱 Incident Triage & Escalation (SOC workflows)</small></div>
-        <div class="chip"><small>🎫 Ticketing Systems & SLA-Based Support</small></div>
-        <div class="chip"><small>⚡ PowerShell & Security Scripting</small></div>
-        <div class="chip"><small>🛠 Burp Suite for Web Security Testing</small></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROJECTS -->
-  <section id="projects">
-    <div class="container">
-      <h2 class="section-title">Projects</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>Gophish Phishing Simulator</h3>
-          <p>Hands-on phishing simulation on Kali Linux & Mailtrap.</p>
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number">7+</span>
+                    <div class="stat-label">Months Experience</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">3+</span>
+                    <div class="stat-label">Certifications</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">10+</span>
+                    <div class="stat-label">Projects Completed</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">Masters</span>
+                    <div class="stat-label">Cybersecurity Degree</div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CERTIFICATIONS -->
-  <section id="certs">
-    <div class="container">
-      <h2 class="section-title">Certifications</h2>
-      <div class="grid">
-        <div class="card"><h3>💠 Security Blue Team Level 1 (BTL1)</h3><p class="muted">Certificate</p></div>
-        <div class="card"><h3>🎓 CompTIA Security+</h3><p class="muted">Certificate</p></div>
-        <div class="card"><h3>🖥 Introduction to Splunk</h3><p class="muted">Certificate</p></div>
-        <div class="card"><h3>🔐 Cybersecurity Essentials</h3><p class="muted">Certificate</p></div>
-      </div>
-    </div>
-  </section>
+    <!-- Skills Section -->
+    <section class="skills-section">
+        <div class="container">
+            <h2 class="section-title">Technical Arsenal 🔧</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <i class="fas fa-search"></i>
+                    <h3>Splunk</h3>
+                    <p>SIEM Analysis</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-network-wired"></i>
+                    <h3>Wireshark</h3>
+                    <p>Network Analysis</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-python"></i>
+                    <h3>Python</h3>
+                    <p>Automation & Scripting</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-linux"></i>
+                    <h3>Linux</h3>
+                    <p>System Administration</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Security Onion</h3>
+                    <p>Network Monitoring</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-bug"></i>
+                    <h3>Malware Analysis</h3>
+                    <p>Threat Investigation</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <h3>Incident Response</h3>
+                    <p>NIST Framework</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-cloud"></i>
+                    <h3>Azure Security</h3>
+                    <p>Cloud Protection</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Risk Assessment</h3>
+                    <p>Vulnerability Management</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-eye"></i>
+                    <h3>Threat Hunting</h3>
+                    <p>Proactive Detection</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-gavel"></i>
+                    <h3>GDPR</h3>
+                    <p>Compliance & Privacy</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-code"></i>
+                    <h3>PowerShell</h3>
+                    <p>Windows Security</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- EXPERIENCE -->
-  <section id="experience">
-    <div class="container">
-      <h2 class="section-title">Experience</h2>
-      <div class="card">
-        <h3>Cybersecurity Intern — ECS Software Technologies</h3>
-        <p class="muted">Jan 2023 – Jul 2023</p>
-        <ul style="margin-left:1rem;line-height:1.6">
-          <li>Provided first-level technical support and incident triage, ensuring SLA targets were consistently met.</li>
-          <li>Utilized SIEM tools to investigate and document security alerts, adhering to established runbooks.</li>
-          <li>Monitored logs across 50+ endpoints, detecting and investigating 20+ anomalous activities per month.</li>
-          <li>Gained hands-on experience in a simulated SOC environment, enhancing cybersecurity skills.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
+    <!-- Experience Section -->
+    <section class="experience-section">
+        <div class="container">
+            <h2 class="section-title">Experience Journey 💼</h2>
+            
+            <div class="experience-item reveal">
+                <div class="experience-header">
+                    <div class="experience-title">Cybersecurity Analyst Intern</div>
+                    <div class="experience-date">Jan 2023 - Jul 2023</div>
+                </div>
+                <div class="experience-description">
+                    Currently working as a Cybersecurity professional contributing to innovative security solutions and threat detection. Gained hands-on experience in monitoring security events, analyzing potential threats, and implementing security measures across enterprise environments.
+                </div>
+                <div class="experience-skills">
+                    <span class="skill-tag">SIEM Analysis</span>
+                    <span class="skill-tag">Incident Response</span>
+                    <span class="skill-tag">Threat Detection</span>
+                    <span class="skill-tag">Log Analysis</span>
+                    <span class="skill-tag">Security Monitoring</span>
+                </div>
+            </div>
 
-  <!-- CONTACT -->
-  <section id="contact">
-    <div class="container">
-      <h2 class="section-title">Contact</h2>
-      <div class="card" style="margin-bottom:1rem">
-        <p class="muted">Quick Contacts</p>
-        <p style="line-height:1.9">
-          📞 <a href="tel:+353892023429">+353 892023429</a><br>
-          ✉️ <a href="mailto:sakshiphadtare2596@gmail.com">sakshiphadtare2596@gmail.com</a><br>
-          🔗 <a href="https://www.linkedin.com/in/sakshi-s-phadtare" target="_blank" rel="noopener">LinkedIn</a>
-        </p>
-      </div>
-      <form class="contact" action="https://formspree.io/f/your-form-id" method="POST">
-        <input class="input" type="text" name="name" placeholder="Your Name" required>
-        <input class="input" type="email" name="email" placeholder="Email" required>
-        <textarea class="input" name="message" placeholder="Your message" rows="4" required></textarea>
-        <button class="btn primary" type="submit">Send Message</button>
-        <p class="muted" style="margin:0">Form powered by Formspree. Replace the action URL with your own.</p>
-      </form>
-    </div>
-  </section>
+            <div class="experience-item reveal">
+                <div class="experience-header">
+                    <div class="experience-title">Masters in Cybersecurity</div>
+                    <div class="experience-date">2022 - 2023</div>
+                </div>
+                <div class="experience-description">
+                    Completed comprehensive cybersecurity program focusing on network security, digital forensics, incident response, and risk management. Worked on advanced projects involving threat analysis and security framework implementation.
+                </div>
+                <div class="experience-skills">
+                    <span class="skill-tag">Network Security</span>
+                    <span class="skill-tag">Digital Forensics</span>
+                    <span class="skill-tag">Risk Management</span>
+                    <span class="skill-tag">Cryptography</span>
+                    <span class="skill-tag">Penetration Testing</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <footer>
-    <div class="container">© <span id="year"></span> Sakshi Phadtare</div>
-  </footer>
+    <!-- Projects Section -->
+    <section class="projects-section">
+        <div class="container">
+            <h2 class="section-title">Featured Projects 🚀</h2>
+            <div class="projects-grid">
+                
+                <div class="project-card reveal">
+                    <div class="project-title">Enterprise Phishing Simulation 🎣</div>
+                    <div class="project-description">
+                        Comprehensive phishing simulation using Kali Linux & Mailtrap to test organizational security awareness and improve employee training effectiveness.
+                    </div>
+                    <div class="experience-skills">
+                        <span class="skill-tag">Kali Linux</span>
+                        <span class="skill-tag">Mailtrap</span>
+                        <span class="skill-tag">Social Engineering</span>
+                        <span class="skill-tag">Security Awareness</span>
+                    </div>
+                </div>
 
-  <script>
-    const toggleMenu = () => {
-      const menu = document.getElementById('primary-menu');
-      const isOpen = menu.classList.toggle('open');
-      document.querySelector('.mobile-toggle').setAttribute('aria-expanded', isOpen);
-    };
-    document.getElementById('year').textContent = new Date().getFullYear();
-    // Smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', e=>{
-        const el=document.querySelector(a.getAttribute('href'));
-        if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); }
-      })
-    })
-  </script>
+                <div class="project-card reveal">
+                    <div class="project-title">Home Security Operations Center 🏠</div>
+                    <div class="project-description">
+                        Built comprehensive home lab environment with SIEM implementation, network monitoring, and automated threat detection capabilities using Security Onion and ELK Stack.
+                    </div>
+                    <div class="experience-skills">
+                        <span class="skill-tag">Security Onion</span>
+                        <span class="skill-tag">ELK Stack</span>
+                        <span class="skill-tag">Network Monitoring</span>
+                        <span class="skill-tag">SIEM</span>
+                    </div>
+                </div>
+
+                <div class="project-card reveal">
+                    <div class="project-title">Threat Intelligence Automation 🤖</div>
+                    <div class="project-description">
+                        Python-based threat intelligence gathering system with automated IOC collection from multiple sources and SIEM integration for real-time detection.
+                    </div>
+                    <div class="experience-skills">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">API Integration</span>
+                        <span class="skill-tag">Threat Intelligence</span>
+                        <span class="skill-tag">Automation</span>
+                    </div>
+                </div>
+
+                <div class="project-card reveal">
+                    <div class="project-title">Network Security Assessment 🔍</div>
+                    <div class="project-description">
+                        Comprehensive network vulnerability assessment and penetration testing project identifying security gaps and providing remediation strategies.
+                    </div>
+                    <div class="experience-skills">
+                        <span class="skill-tag">Vulnerability Assessment</span>
+                        <span class="skill-tag">Penetration Testing</span>
+                        <span class="skill-tag">Network Analysis</span>
+                        <span class="skill-tag">Reporting</span>
+                    </div>
+                </div>
+
+                <div class="project-card reveal">
+                    <div class="project-title">Incident Response Playbook 📋</div>
+                    <div class="project-description">
+                        Developed comprehensive incident response procedures and playbooks following NIST framework for efficient threat containment and recovery.
+                    </div>
+                    <div class="experience-skills">
+                        <span class="skill-tag">NIST Framework</span>
+                        <span class="skill-tag">Incident Response</span>
+                        <span class="skill-tag">Documentation</span>
+                        <span class="skill-tag">Process Improvement</span>
+                    </div>
+                </div>
+
+                <div class="project-card reveal">
+                    <div class="project-title">Malware Analysis Lab 🦠</div>
+                    <div class="project-description">
+                        Built isolated malware analysis environment for safe dissection and behavioral analysis of malicious software samples using various analysis tools.
+                    </div>
+                    <div class="experience-skills">
+                        <span class="skill-tag">Malware Analysis</span>
+                        <span class="skill-tag">Reverse Engineering</span>
+                        <span class="skill-tag">Sandboxing</span>
+                        <span class="skill-tag">Digital Forensics</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section class="certifications-section">
+        <div class="container">
+            <h2 class="section-title">Certifications & Learning 🏆</h2>
+            <div class="cert-grid">
+                
+                <div class="cert-card reveal">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Blue Team Labs Level 1 (BTL1)</h3>
+                    <p>Hands-on defensive cybersecurity skills certification</p>
+                </div>
+
+                <div class="cert-card reveal">
+                    <i class="fas fa-lock"></i>
+                    <h3>CompTIA Security+</h3>
+                    <p>Foundational cybersecurity concepts and practices</p>
+                </div>
+
+                <div class="cert-card reveal">
+                    <i class="fab fa-microsoft"></i>
+                    <h3>Microsoft SC-200 (In Progress)</h3>
+                    <p>Microsoft Security Operations Analyst certification</p>
+                </div>
+
+                <div class="cert-card reveal">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Masters in Cybersecurity</h3>
+                    <p>Advanced degree in cybersecurity from Irish university</p>
+                </div>
+
+                <div class="cert-card reveal">
+                    <i class="fas fa-code"></i>
+                    <h3>TryHackMe Learning Path</h3>
+                    <p>Continuous learning through hands-on cyber challenges</p>
+                </div>
+
+                <div class="cert-card reveal">
+                    <i class="fas fa-flag"></i>
+                    <h3>CTF Competitions</h3>
+                    <p>Regular participation in capture-the-flag challenges</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-content">
+                <h2 class="section-title">Let's Connect! 🤝</h2>
+                <p>Ready to contribute to your cybersecurity team. Available for entry-level cybersecurity roles across Ireland. Let's build a more secure digital world together! 🌍</p>
+                
+                <div class="contact-links">
+                    <a href="mailto:your.email@gmail.com" class="contact-link">
+                        <i class="fas fa-envelope"></i>
+                        Contact Me
+                    </a>
+                    <a href="https://linkedin.com/in/yourprofile" class="contact-link" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                        LinkedIn
+                    </a>
+                    <a href="https://github.com/yourusername" class="contact-link" target="_blank">
+                        <i class="fab fa-github"></i>
+                        GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scrolling and reveal animations
+        function reveal() {
+            var reveals = document.querySelectorAll('.reveal');
+            
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add('active');
+                }
+            }
+        }
+
+        window.addEventListener('scroll', reveal);
+        
+        // Initial reveal on load
+        window.addEventListener('load', function() {
+            reveal();
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
